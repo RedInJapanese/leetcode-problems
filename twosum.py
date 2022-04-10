@@ -14,7 +14,6 @@ def twoSum(nums, target):
         k = 0
         j = 0
         f = 0
-        check = 0
         for i in nums: 
             if(i<=target):
                 d[f] = j
