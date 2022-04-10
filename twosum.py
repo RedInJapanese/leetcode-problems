@@ -23,7 +23,6 @@ def twoSum(nums, target):
                 x+=1
             k+=1
             x = k+1
-        #return weeder
-nums = [2,7,11,15]
+nums = [2,0,11,9]
 output = twoSum(nums, 9)
 print(output)
