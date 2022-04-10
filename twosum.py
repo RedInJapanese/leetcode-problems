@@ -13,17 +13,19 @@ def twoSum(nums, target):
         x = 1
         k = 0
         j = 0
+        f = 0
         check = 0
         for i in nums: 
             if(i<=target):
-                d[i] = j
+                d[f] = j
                 weeder.append(i)
+                f+=1
             j+=1
         while(k<len(weeder)):
             while(x<len(weeder)):
                 if(weeder[x] == target - weeder[k]):
-                    lol.append(d[weeder[k]])
-                    lol.append(d[weeder[x]])
+                    lol.append(d[k])
+                    lol.append(d[x])
                     return lol
                 x+=1
             k+=1
