@@ -14,21 +14,15 @@ def twoSum(nums, target):
         k = 0
         j = 0
         f = 0
-        for i in nums: 
-            if(i<=target):
-                d[f] = j
-                weeder.append(i)
-                f+=1
-            j+=1
-        while(k<len(weeder)):
-            while(x<len(weeder)):
-                if(weeder[x] == target - weeder[k]):
-                    lol.append(d[k])
-                    lol.append(d[x])
+        while(k<len(nums)):
+            while(x<len(nums)):
+                if(nums[x] == target-nums[k]):
+                    lol.append(k)
+                    lol.append(x)
                     return lol
                 x+=1
             k+=1
             x = k+1
-nums = [22,0,11,9]
-output = twoSum(nums, 9)
+nums = [-3,4,3,90]
+output = twoSum(nums, 0)
 print(output)
