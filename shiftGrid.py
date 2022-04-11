@@ -7,18 +7,18 @@ def shiftGrid(grid, k):
     x = z = 0
     y = 2
     size = len(grid)
-    check = []
-    for i in grid:
-        vector = i
-        vector[0]=grid[(x+size-k)%size][len(grid[x])-1]
+    vector = []
+    for i in grid: 
+        toroidal=grid[(x+size-k)%size][len(grid[x])-1]
         for j in i:
-            y+=1
-            z+=1 
+            prev = grid[x][(z+len(i))%len(i)]
+            vector.append(j)
+            z+=1
+        print(vector)
+        vector = []
         x+=1
-        y = 1
-    return grid
 grid = [[1,2,3],[4,5,6],[7,8,9]]
 k = 1
 print(grid)
-print(shiftGrid(grid, k))
+shiftGrid(grid, k)
 print(grid)
