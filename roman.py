@@ -22,4 +22,4 @@ def romanToInt(s):
         i-=1
     return sum
 
-print("sum :",romanToInt("III"))
+print("sum :",romanToInt("IIV"))
