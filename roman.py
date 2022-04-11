@@ -1,25 +1,18 @@
 def romanToInt(s):
     i = len(s)
+    buffer = ''
+    check = 'P'
     sum = 0
-    checker = 1000000
-
-
+    d = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000, 'P':0}
+    
     while(i>0):
-        if(s[i-1] == 'I'):
-            sum+=1
-        if(s[i-1] == 'V'):
-            sum+=5
-        if(s[i-1] == 'X'):
-            sum+=10
-        if(s[i-1] == 'L'):
-            sum+=50
-        if(s[i-1] == 'C'):
-            sum+=100
-        if(s[i-1] == 'D'):
-            sum+=500
-        if(s[i-1] == 'M'):
-            sum+=1000
+        buffer = s[i-1]
+        if(d[check]>d[buffer]):
+            sum-=d[buffer]
+        else: 
+            sum+=d[buffer]
         i-=1
+        check = buffer
     return sum
 
-print("sum :",romanToInt("IIV"))
+print("sum :",romanToInt("IV"))
