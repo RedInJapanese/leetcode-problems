@@ -7,22 +7,20 @@ def twoSum(nums, target):
         :type target: int
         :rtype: List[int]
         """
-        weeder = []
         lol = []
         d = {} 
-        x = 1
         k = 0
-        j = 0
         f = 0
-        while(k<len(nums)):
-            while(x<len(nums)):
-                if(nums[x] == target-nums[k]):
+        for i in nums:
+            d[i]=f
+            f+=1
+        for x in nums: 
+            if target-x in d:
+                if(k != d[target-x]):
                     lol.append(k)
-                    lol.append(x)
+                    lol.append(d[target-x])
                     return lol
-                x+=1
             k+=1
-            x = k+1
 nums = [-3,4,3,90]
 output = twoSum(nums, 0)
 print(output)
