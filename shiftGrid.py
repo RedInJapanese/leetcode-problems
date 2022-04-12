@@ -4,8 +4,7 @@ def shiftGrid(grid, k):
     :type k: int
     :rtype: List[List[int]]
     """
-    x = z = b = a = d = e =0
-    size = len(grid)
+    x = z = b = 0
     vector = []
     sorted = []
     grid2 = [] 
@@ -18,7 +17,6 @@ def shiftGrid(grid, k):
         prev = vector[(b + len(vector) - k) % len(vector)]
         sorted.append(prev)
         if(len(sorted) == len(grid[0])):
-            print(sorted)
             grid2.append(sorted)
             sorted = []
         b+=1
@@ -26,4 +24,4 @@ def shiftGrid(grid, k):
 grid = [[1],[2],[3],[4],[7],[6],[5]]
 k = 23
 print(grid)
-shiftGrid(grid, k)
+print(shiftGrid(grid, k))
