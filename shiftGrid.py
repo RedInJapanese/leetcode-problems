@@ -4,21 +4,26 @@ def shiftGrid(grid, k):
     :type k: int
     :rtype: List[List[int]]
     """
-    x = z = 0
-    y = 2
+    x = z = b = a = d = e =0
     size = len(grid)
     vector = []
+    sorted = []
+    grid2 = [] 
     for i in grid: 
-        toroidal=grid[(x+size-k)%size][len(grid[x])-1]
         for j in i:
-            prev = grid[x][(z+len(i))%len(i)]
             vector.append(j)
             z+=1
-        print(vector)
-        vector = []
         x+=1
-grid = [[1,2,3],[4,5,6],[7,8,9]]
-k = 1
+    for i in vector: 
+        prev = vector[(b + len(vector) - k) % len(vector)]
+        sorted.append(prev)
+        if(len(sorted) == len(grid[0])):
+            print(sorted)
+            grid2.append(sorted)
+            sorted = []
+        b+=1
+    return grid2
+grid = [[1],[2],[3],[4],[7],[6],[5]]
+k = 23
 print(grid)
 shiftGrid(grid, k)
-print(grid)
