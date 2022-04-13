@@ -7,7 +7,7 @@ void generateMatrix(int n, int* returnSize, int** returnColumnSizes);
 
 void generateMatrix(int n, int* returnSize, int** returnColumnSizes){
     returnSize = (int*)malloc((n*n)*sizeof(int));
-    returnColumnSizes = (int**)malloc(n*sizeof(int*));
+    returnColumnSizes = (int**)malloc((n*n)*sizeof(int*));
     int x = 1;
     int y = 0;
     for(int i = 0;i <(n*n); i++) {
