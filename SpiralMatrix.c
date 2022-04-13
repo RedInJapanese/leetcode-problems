@@ -3,11 +3,14 @@
 #include <unistd.h>
 
 
-void generateMatrix(int n, int* returnSize, int** returnColumnSizes);
+int **generateMatrix(int n, int* returnSize, int** returnColumnSizes);
 
-void generateMatrix(int n, int* returnSize, int** returnColumnSizes){
+int **generateMatrix(int n, int* returnSize, int** returnColumnSizes){
     returnSize = (int*)malloc((n*n)*sizeof(int));
-    returnColumnSizes = (int**)malloc((n*n)*sizeof(int*));
+    returnColumnSizes = (int**)calloc(n,sizeof(int*));
+    for(int l = 0; l<n; l++) {
+	    returnColumnSizes[l] = (int*)calloc(n, sizeof(int));
+    }
     int x = 1;
     int y = 0;
     for(int i = 0;i <(n*n); i++) {
@@ -22,6 +25,7 @@ void generateMatrix(int n, int* returnSize, int** returnColumnSizes){
         }
     }
     printf("\n");
+    return returnColumnSizes;
 
 }
 
