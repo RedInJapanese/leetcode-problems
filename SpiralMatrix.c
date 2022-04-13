@@ -20,9 +20,11 @@ int **generateMatrix(int n, int* returnSize, int** returnColumnSizes){
     for(int j = 0; j<n; j++) {
         for(int k = 0; k<n; k++) {
             returnColumnSizes[j][k] = returnSize[y];
-            printf("%d ", returnColumnSizes[j][k]);
             y++;
         }
+    }
+    for(int h = 0; h<n; h++) {
+        printf("%d ", returnColumnSizes[0][h]);
     }
     printf("\n");
     return returnColumnSizes;
