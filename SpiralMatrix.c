@@ -33,9 +33,9 @@ int main(void) {
     int **returnC = NULL;
     generateMatrix(n, returnS, returnC);
 
-    for(int i = 0; i<n; i++) {
-        for(int j = 0; j<n; j++) {
-            printf("%d\n", returnC[i][j]);
+    for(int o = 0; o<n; o++) {
+        for(int m = 0; m<n; m++) {
+            printf("%d\n", returnC[o][m]);
         }
     }
     return 0;
