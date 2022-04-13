@@ -31,7 +31,7 @@ int main(void) {
     int n = 3; 
     int* returnS = NULL;
     int **returnC = NULL;
-    generateMatrix(n, returnS, returnC);
+    returnC = generateMatrix(n, returnS, returnC);
 
     for(int o = 0; o<n; o++) {
         for(int m = 0; m<n; m++) {
