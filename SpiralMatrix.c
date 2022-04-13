@@ -23,10 +23,6 @@ int **generateMatrix(int n, int* returnSize, int** returnColumnSizes){
             y++;
         }
     }
-    for(int h = 0; h<n; h++) {
-        printf("%d ", returnColumnSizes[0][h]);
-    }
-    printf("\n");
     return returnColumnSizes;
 
 }
@@ -36,6 +32,12 @@ int main(void) {
     int* returnS = NULL;
     int **returnC = NULL;
     generateMatrix(n, returnS, returnC);
+
+    for(int i = 0; i<n; i++) {
+        for(int j = 0; j<n; j++) {
+            printf("%d\n", returnC[i][j]);
+        }
+    }
     return 0;
 }
 
