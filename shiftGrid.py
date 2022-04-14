@@ -21,7 +21,7 @@ def shiftGrid(grid, k):
             sorted = []
         b+=1
     return grid2
-grid = [[1],[2],[3],[4],[7],[6],[5]]
-k = 23
+grid = [[1,2,3], [4,5,6], [7,8,9]]
+k = 4
 print(grid)
 print(shiftGrid(grid, k))
