@@ -18,10 +18,12 @@ int **generateMatrix(int n, int* returnSize, int** returnColumnSizes){
         x++;
     }
     for(int j = 0; j<n; j++) {
-        for(int k = 0; k<n; k++) {
-            returnColumnSizes[j][k] = returnSize[y];
-            y++;
-        }
+        returnColumnSizes[0][j] = returnSize[y];
+        y++;
+    }
+    for(int k = 0; k<n; k++) {
+        returnColumnSizes[k][n-1]= returnSize[y];
+        y++;
     }
     return returnColumnSizes;
 
