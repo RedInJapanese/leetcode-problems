@@ -1,5 +1,5 @@
 all:
-	clang -Wall -Werror -Wextra -Wpedantic -o Spiral SpiralMatrix.c -g
+	clang -Wall -Werror -Wextra -Wpedantic -o k kth.c -g
 tidy_objects:
 	$(RM) $(OBJS)
 tidy: tidy_objects
