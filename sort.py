@@ -7,7 +7,7 @@ def searchInsert(self, nums, target):
     if target in d:
         return d[target]
     else:
-        j = len(nums)-1
-        while j>0 and target<nums[j]:
+        j = len(nums)
+        while j>0 and target<nums[j-1]:
             j-=1
         return j
