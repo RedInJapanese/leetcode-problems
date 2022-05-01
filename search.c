@@ -1,19 +1,21 @@
 
 
 int search(int* nums, int numsSize, int target){
-    int left = numsSize/2;
-    int right = numsSize;
-    if(right>=1) {
-        int mid = left+(right-1)/2;
+    int left = 0; 
+    int right = numsSize-1;
+    while(left<=right) {
+        int mid = left+(right-left)/2;
         if(nums[mid] == target) {
             return mid;
         }
         if(nums[mid]>target) {
-            return search(nums, right-1, target);
+            right = mid-1;
         }
-        return search(nums, left+1, target);
-
+        else {
+            left = mid+1;
+        }
     }
+    return -1;
 }
 
 int main(void) {
