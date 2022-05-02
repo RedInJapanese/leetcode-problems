@@ -1,18 +1,16 @@
 def romanToInt(s):
-    i = len(s)
-    buffer = ''
-    check = 'P'
-    sum = 0
-    d = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000, 'P':0}
+    d = {1: "I", 4:"IV",5:"V",9:"IX",10:"X", 40:"XL",50:"L",
+        90:"XC",
+        100:"C",
+        400:"CD",
+        500:"D",
+        900:"CM",
+        1000:"M"}
+    roman = ''
+    for i in sorted(d, reverse=True):
+        if num//i:
+            roman+=d[i]*(num//i)
+            num-=(i*(num//i))
+    return roman
     
-    while(i>0):
-        buffer = s[i-1]
-        if(d[check]>d[buffer]):
-            sum-=d[buffer]
-        else: 
-            sum+=d[buffer]
-        i-=1
-        check = buffer
-    return sum
-
 print("sum :",romanToInt("IV"))
